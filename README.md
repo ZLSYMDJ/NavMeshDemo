@@ -1,0 +1,14 @@
+RecastNavigation是由Mikko Mononen大佬开发的导航网格寻路开源库，众多游戏引擎和ai项目的3D寻路都是基于这个库（比如Unity、Unreal等）
+在github上的地址https://github.com/recastnavigation/recastnavigation
+
+原项目中包含了两个部分：
+Recast-将3D场景转化为邻接的凸多边形集合
+Detour-在Recast求出的凸多边形集合上寻路
+
+由于Recast部分其实是可以离线处理的（即预处理场景，将结果保存在二进制文件中，Detour通过读取文件的方式得到多边形集合）
+所以这个demo的工作就是将Detour从原来的recastnav项目中抽取出来，作为一个单独提供寻路功能的工程
+
+其中SoloMesh是最基础的静态场景寻路（即地图场景不会发生变化）
+TempObstacle是支持动态添加阻挡的寻路
+
+关于导航网格的学习可以参考我的简书https://www.jianshu.com/p/64469a410b5d
